@@ -29,6 +29,9 @@ fetch(`${config.url}?results=${config.numberCards}`)
       let li = createNode("li"),
         img = createNode("img"),
         h2 = createNode("h2");
+      img.classList.add("card__image");
+      li.classList.add("card__item");
+      h2.classList.add("card__title");
       img.src = man.picture.large;
       h2.innerHTML = `${man.name.first} ${man.name.last}`;
       append(li, img);
