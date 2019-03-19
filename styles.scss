@@ -1,7 +1,128 @@
+/* =========================================
+             Default styling
+========================================== */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+               Variables
+========================================== */
+$background-color: #eee;
+$text-color: #333;
+$card-background: #fff;
+$card-cta-background: #e26d00;
+$card-cta-color: #fff;
+$default-spacing: 20px;
+$max-width: 1024px;
+
 body {
-  .kir {
-    width: 20%;
-    padding: 10px;
-    background: red;
+  background-color: $background-color;
+  color: $text-color;
+  font-family: Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* =========================================
+                    Card
+========================================== */
+.card__wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  list-style-type: none;
+  border-radius: 6px;
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.2));
+  text-align: center;
+}
+
+.card {
+  flex-basis: 100%;
+  height: 365px;
+  -ms-flex: auto;
+  position: relative;
+  padding: 10px;
+
+  &__item {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+    background: $card-background;
+  }
+  &__image {
+    width: 170px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__title {
+    height: 60px;
+    margin: 20px auto;
+    font-size: 28px;
+    text-transform: capitalize;
+  }
+
+  &__cta {
+    width: 70%;
+    padding: 8px;
+    background-color: $card-cta-background;
+    color: $card-cta-color;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+}
+
+/* =========================================
+             Media Queries
+========================================== */
+@media only screen and (min-width: 450px) and (max-width: 699px) {
+  .card {
+    flex-basis: 50%;
+    height: 380px;
+  }
+
+  .card__title {
+    height: 75px;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1023px) {
+  .card {
+    flex-basis: 33.33%;
+    height: 375px;
+  }
+
+  .card__title {
+    height: 70px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .card {
+    flex-basis: 25%;
+    height: 400px;
+  }
+
+  .card__title {
+    height: 90px;
   }
 }
